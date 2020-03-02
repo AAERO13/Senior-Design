@@ -1,4 +1,5 @@
 # This Python file uses the following encoding: utf-8
+# Senior Design Embedded GUI file
 import sys
 from PyQt5 import *
 from UIbasemainwindow import *

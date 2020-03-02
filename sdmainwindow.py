@@ -19,6 +19,7 @@ class SDMainWindow(Ui_MainWindow):
 
         #actions
         self.pb_BarcodeTrue.clicked.connect(self.BarcodeScanningPage)
+        self.pb_TRight.clicked.connect(self.LoginPage)
 
 
 
@@ -31,6 +32,7 @@ class SDMainWindow(Ui_MainWindow):
         #actions
         self.pb_TLeft.clicked.connect(self.WelcomePage)
         self.pb_notworking.clicked.connect(self.KeyInTrackNumPage)
+        self.pb_TRight.clicked.connect(self.LoginPage)
 
     def KeyInTrackNumPage(self): #third widget
         #actions
@@ -211,6 +213,7 @@ class SDMainWindow(Ui_MainWindow):
             self.pb_Y.clicked.connect(lambda: keypadinput('Y'))
             self.pb_Z.clicked.connect(lambda: keypadinput('Z'))
             self.pb_TLeft.clicked.connect(ResetAndGoBack)
+            self.pb_TRight.clicked.connect(self.LoginPage)
             self.pb_numEnter.clicked.connect(getTrackingNumber)
             #setting up page
             self.stackedWidget.setCurrentIndex(2)
@@ -221,6 +224,18 @@ class SDMainWindow(Ui_MainWindow):
             self.keybuffer = ""
             self.index = 0
         setup() #setup call
+
+
+    def LoginPage(self): #fourth widget
+        #setup
+        def setup():
+            self.stackedWidget.setCurrentIndex(3)
+            self.pb_TLeft.setEnabled(True)
+            self.ScreenTitle.setText("Login")
+            self.pb_TLeft.clicked.connect(self.WelcomePage)
+        setup()
+
+
 
 
 if __name__ == "__main__":  #execute application from class python file

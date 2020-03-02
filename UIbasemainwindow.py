@@ -116,18 +116,18 @@ class Ui_MainWindow(object):
         self.gridLayout_3 = QtWidgets.QGridLayout()
         self.gridLayout_3.setContentsMargins(10, 1, 10, 1)
         self.gridLayout_3.setObjectName("gridLayout_3")
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout_3.addItem(spacerItem1, 0, 3, 1, 1)
-        self.pb_TLeft = QtWidgets.QPushButton(self.centralwidget)
-        self.pb_TLeft.setEnabled(True)
-        self.pb_TLeft.setMinimumSize(QtCore.QSize(100, 50))
-        self.pb_TLeft.setObjectName("pb_TLeft")
-        self.gridLayout_3.addWidget(self.pb_TLeft, 0, 0, 1, 1)
         self.ScreenTitle = QtWidgets.QLabel(self.centralwidget)
         self.ScreenTitle.setMinimumSize(QtCore.QSize(400, 0))
         self.ScreenTitle.setAlignment(QtCore.Qt.AlignCenter)
         self.ScreenTitle.setObjectName("ScreenTitle")
         self.gridLayout_3.addWidget(self.ScreenTitle, 0, 2, 1, 1)
+        self.pb_TLeft = QtWidgets.QPushButton(self.centralwidget)
+        self.pb_TLeft.setEnabled(True)
+        self.pb_TLeft.setMinimumSize(QtCore.QSize(100, 50))
+        self.pb_TLeft.setObjectName("pb_TLeft")
+        self.gridLayout_3.addWidget(self.pb_TLeft, 0, 0, 1, 1)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout_3.addItem(spacerItem1, 0, 3, 1, 1)
         self.pb_TRight = QtWidgets.QPushButton(self.centralwidget)
         self.pb_TRight.setMinimumSize(QtCore.QSize(100, 50))
         self.pb_TRight.setObjectName("pb_TRight")
@@ -409,7 +409,111 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.addLayout(self.gridLayout_4)
         self.horizontalLayout_6.addLayout(self.verticalLayout_3)
         self.stackedWidget.addWidget(self.KeyInTrackNum)
-        self.gridLayout.addWidget(self.stackedWidget, 3, 0, 1, 1)
+        self.Login = QtWidgets.QWidget()
+        self.Login.setStyleSheet("QPushButton {\n"
+"    font: bold 22px Arial;\n"
+"    color: black;\n"
+"    border: 3px solid #8f8f91;\n"
+"    border-radius: 8px;\n"
+"    padding-left: 10px;\n"
+"    padding-right: 10px;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"    min-width: 44px;   /* 6 less because of the padding*/\n"
+"    min-height: 44px; /* 6 less because of the padding*/\n"
+"}\n"
+"\n"
+"QPushButton:hover, QPushButton:focus {\n"
+"    color: black;\n"
+"    border: 3px solid red;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #f6f7fa, stop: 1 #dadbde);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    color: white;\n"
+"    border: 3px solid #8f8f91;\n"
+"    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #0055ff, stop: 1 #003cb6);\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"    color: #d4d4d4;\n"
+"    border: 3px solid #d4d4d4;\n"
+"}\n"
+"\n"
+"/********Line Edit*********/\n"
+"\n"
+"QLineEdit {\n"
+"  font: bold 16pt \"Liberation Sans Narrow\";\n"
+"  color: black;\n"
+"  border: 1px solid #ccc;\n"
+"  padding: 3px 6px;\n"
+"  border-radius: 8px;\n"
+"  margin: 1%;\n"
+"  background:white;\n"
+"  /*background-color:transparent;*/\n"
+"  border:4px solid #0055ff;\n"
+"  min-height: 30px;\n"
+"  max-height: 30px;\n"
+"}\n"
+"\n"
+"QLineEdit:hover, QLineEdit:focus{background:none; border:4px solid red}\n"
+"\n"
+"QLineEdit:disabled{\n"
+"  background:grey;\n"
+"  border-right:4px solid #bbb;\n"
+"  border-left:4px solid #bbb;\n"
+"}\n"
+"QLineEdit:read-only,QLineEdit:hover:read-only {\n"
+"  background:url(:/images/ControlButtons/txbx_readonly.png) no-repeat center;\n"
+"  border:3px solid #eee;  \n"
+"  border-left: 4px solid #ddd;  \n"
+"  border-right: 4px solid #ddd; \n"
+"}\n"
+"")
+        self.Login.setObjectName("Login")
+        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.Login)
+        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
+        spacerItem3 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_7.addItem(spacerItem3)
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.lineEdit = QtWidgets.QLineEdit(self.Login)
+        self.lineEdit.setObjectName("lineEdit")
+        self.verticalLayout.addWidget(self.lineEdit)
+        self.gridLayout_5 = QtWidgets.QGridLayout()
+        self.gridLayout_5.setObjectName("gridLayout_5")
+        self.pb2_num8 = QtWidgets.QPushButton(self.Login)
+        self.pb2_num8.setObjectName("pb2_num8")
+        self.gridLayout_5.addWidget(self.pb2_num8, 7, 1, 1, 1)
+        self.pb2_num2 = QtWidgets.QPushButton(self.Login)
+        self.pb2_num2.setObjectName("pb2_num2")
+        self.gridLayout_5.addWidget(self.pb2_num2, 0, 1, 1, 1)
+        self.pb2_num5 = QtWidgets.QPushButton(self.Login)
+        self.pb2_num5.setObjectName("pb2_num5")
+        self.gridLayout_5.addWidget(self.pb2_num5, 3, 1, 1, 1)
+        self.pb2_num4 = QtWidgets.QPushButton(self.Login)
+        self.pb2_num4.setObjectName("pb2_num4")
+        self.gridLayout_5.addWidget(self.pb2_num4, 3, 0, 1, 1)
+        self.pb2_num9 = QtWidgets.QPushButton(self.Login)
+        self.pb2_num9.setObjectName("pb2_num9")
+        self.gridLayout_5.addWidget(self.pb2_num9, 7, 2, 1, 1)
+        self.pb2_num7 = QtWidgets.QPushButton(self.Login)
+        self.pb2_num7.setObjectName("pb2_num7")
+        self.gridLayout_5.addWidget(self.pb2_num7, 7, 0, 1, 1)
+        self.pb2_num1 = QtWidgets.QPushButton(self.Login)
+        self.pb2_num1.setObjectName("pb2_num1")
+        self.gridLayout_5.addWidget(self.pb2_num1, 0, 0, 1, 1)
+        self.pb2_num = QtWidgets.QPushButton(self.Login)
+        self.pb2_num.setObjectName("pb2_num")
+        self.gridLayout_5.addWidget(self.pb2_num, 3, 2, 1, 1)
+        self.pb2_num3 = QtWidgets.QPushButton(self.Login)
+        self.pb2_num3.setObjectName("pb2_num3")
+        self.gridLayout_5.addWidget(self.pb2_num3, 0, 2, 1, 1)
+        self.verticalLayout.addLayout(self.gridLayout_5)
+        self.horizontalLayout_7.addLayout(self.verticalLayout)
+        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout_7.addItem(spacerItem4)
+        self.stackedWidget.addWidget(self.Login)
+        self.gridLayout.addWidget(self.stackedWidget, 3, 0, 1, 1, QtCore.Qt.AlignHCenter)
         self.gridLayout_2.addLayout(self.gridLayout, 0, 0, 1, 3)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
@@ -421,15 +525,15 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Intelli-Parse"))
         self.Title.setText(_translate("MainWindow", "Intelli-Parse"))
-        self.pb_TLeft.setText(_translate("MainWindow", "Go Back"))
         self.ScreenTitle.setText(_translate("MainWindow", "Title of Screen"))
+        self.pb_TLeft.setText(_translate("MainWindow", "Go Back"))
         self.pb_TRight.setText(_translate("MainWindow", "Owner"))
         self.pb_BarcodeTrue.setText(_translate("MainWindow", "I have Tracking Barcode"))
         self.pb_BarcodeFalse.setText(_translate("MainWindow", "No Barcode"))
@@ -476,6 +580,15 @@ class Ui_MainWindow(object):
         self.pb_Z.setText(_translate("MainWindow", "Z"))
         self.pb_numEnter.setText(_translate("MainWindow", "Enter"))
         self.pb_DEL.setText(_translate("MainWindow", "DEL"))
+        self.pb2_num8.setText(_translate("MainWindow", "8"))
+        self.pb2_num2.setText(_translate("MainWindow", "2"))
+        self.pb2_num5.setText(_translate("MainWindow", "5"))
+        self.pb2_num4.setText(_translate("MainWindow", "4"))
+        self.pb2_num9.setText(_translate("MainWindow", "9"))
+        self.pb2_num7.setText(_translate("MainWindow", "7"))
+        self.pb2_num1.setText(_translate("MainWindow", "1"))
+        self.pb2_num.setText(_translate("MainWindow", "6"))
+        self.pb2_num3.setText(_translate("MainWindow", "3"))
 
 
 if __name__ == "__main__":

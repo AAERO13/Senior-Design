@@ -9,6 +9,46 @@ from UIbasemainwindow import *
 class SDMainWindow(Ui_MainWindow):
     def __init__(self):
         super().setupUi(MainWindow)
+        self.pb_num1.clicked.connect(lambda: self.keypadinput(1))
+        self.pb_num2.clicked.connect(lambda: self.keypadinput(2))
+        self.pb_num3.clicked.connect(lambda: self.keypadinput(3))
+        self.pb_num4.clicked.connect(lambda: self.keypadinput(4))
+        self.pb_num5.clicked.connect(lambda: self.keypadinput(5))
+        self.pb_num6.clicked.connect(lambda: self.keypadinput(6))
+        self.pb_num7.clicked.connect(lambda: self.keypadinput(7))
+        self.pb_num8.clicked.connect(lambda: self.keypadinput(8))
+        self.pb_num9.clicked.connect(lambda: self.keypadinput(9))
+        self.pb_num0.clicked.connect(lambda: self.keypadinput('0'))
+        self.pb_DEL.clicked.connect(lambda: self.keypadinput('backspace'))
+        self.pb_movecursorforward.clicked.connect(lambda: self.keypadinput('moveforward'))
+        self.pb_movecursorbackward.clicked.connect(lambda: self.keypadinput('moveback'))
+        self.pb_A.clicked.connect(lambda: self.keypadinput('A'))
+        self.pb_B.clicked.connect(lambda: self.keypadinput('B'))
+        self.pb_C.clicked.connect(lambda: self.keypadinput('C'))
+        self.pb_D.clicked.connect(lambda: self.keypadinput('D'))
+        self.pb_E.clicked.connect(lambda: self.keypadinput('E'))
+        self.pb_F.clicked.connect(lambda: self.keypadinput('F'))
+        self.pb_G.clicked.connect(lambda: self.keypadinput('G'))
+        self.pb_H.clicked.connect(lambda: self.keypadinput('H'))
+        self.pb_I.clicked.connect(lambda: self.keypadinput('I'))
+        self.pb_J.clicked.connect(lambda: self.keypadinput('J'))
+        self.pb_K.clicked.connect(lambda: self.keypadinput('K'))
+        self.pb_L.clicked.connect(lambda: self.keypadinput('L'))
+        self.pb_M.clicked.connect(lambda: self.keypadinput('M'))
+        self.pb_N.clicked.connect(lambda: self.keypadinput('N'))
+        self.pb_O.clicked.connect(lambda: self.keypadinput('O'))
+        self.pb_P.clicked.connect(lambda: self.keypadinput('P'))
+        self.pb_Q.clicked.connect(lambda: self.keypadinput('Q'))
+        self.pb_R.clicked.connect(lambda: self.keypadinput('R'))
+        self.pb_S.clicked.connect(lambda: self.keypadinput('S'))
+        self.pb_T.clicked.connect(lambda: self.keypadinput('T'))
+        self.pb_U.clicked.connect(lambda: self.keypadinput('U'))
+        self.pb_V.clicked.connect(lambda: self.keypadinput('V'))
+        self.pb_W.clicked.connect(lambda: self.keypadinput('W'))
+        self.pb_X.clicked.connect(lambda: self.keypadinput('X'))
+        self.pb_Y.clicked.connect(lambda: self.keypadinput('Y'))
+        self.pb_Z.clicked.connect(lambda: self.keypadinput('Z'))
+
 
 
 
@@ -36,8 +76,18 @@ class SDMainWindow(Ui_MainWindow):
         self.pb_TRight.clicked.connect(self.LoginPage)
 
     def KeyInTrackNumPage(self): #third widget
-        #actions
-        def keypadinput( num): #Define logic for keypad input
+        self.stackedWidget.setCurrentIndex(2)
+        #self.pb_TLeft.setEnabled(True)
+        self.ScreenTitle.setText("Key in Tracking Number")
+        self.TrackinglineEdit.setFocus()
+        self.TrackinglineEdit.clear()
+        self.keybuffer = ""
+        self.index = 0
+        self.pb_TLeft.clicked.connect(self.ResetAndGoBack)
+        self.pb_TRight.clicked.connect(self.LoginPage)
+        self.pb_numEnter.clicked.connect(self.getTrackingNumber)
+
+    def keypadinput(self,num): #Define logic for keypad input
             #print(num, ' pressed')
             self.TrackinglineEdit.setFocus()
             if num == '0':
@@ -162,79 +212,33 @@ class SDMainWindow(Ui_MainWindow):
             else:
                 self.keybuffer = self.keybuffer[0:self.index] + 'Z' + self.keybuffer[self.index:len(self.keybuffer)]
                 self.index = self.index + 1
+
             self.TrackinglineEdit.setText(self.keybuffer)
             self.TrackinglineEdit.setCursorPosition(self.index)
-        def ResetAndGoBack(): #reset buffer and index before returning to second widget
+    def ResetAndGoBack(self): #reset buffer and index before returning to second widget
             self.keybuffer = ''
+            #print('Reset',self.keybuffer)
             self.index = 0
             self.BarcodeScanningPage()
-        def getTrackingNumber(): #to return tracking number to core
-            print(self.TrackinglineEdit.text())
+    def getTrackingNumber(self): #to return tracking number to core
+            print('track num: ',self.TrackinglineEdit.text())
+
+            ##################
+            self.WelcomePage()  #popup needs to go here
+            ##################
+
             #return self.TrackinglineEdit.text()
-        #setup
-        def setup(): #setup third widget after functions are defined
-            #connect all the pushbuttons to keypadinput()'s logic
-            self.pb_num1.clicked.connect(lambda: keypadinput(1))
-            self.pb_num2.clicked.connect(lambda: keypadinput(2))
-            self.pb_num3.clicked.connect(lambda: keypadinput(3))
-            self.pb_num4.clicked.connect(lambda: keypadinput(4))
-            self.pb_num5.clicked.connect(lambda: keypadinput(5))
-            self.pb_num6.clicked.connect(lambda: keypadinput(6))
-            self.pb_num7.clicked.connect(lambda: keypadinput(7))
-            self.pb_num8.clicked.connect(lambda: keypadinput(8))
-            self.pb_num9.clicked.connect(lambda: keypadinput(9))
-            self.pb_num0.clicked.connect(lambda: keypadinput('0'))
-            self.pb_DEL.clicked.connect(lambda: keypadinput('backspace'))
-            self.pb_movecursorforward.clicked.connect(lambda: keypadinput('moveforward'))
-            self.pb_movecursorbackward.clicked.connect(lambda: keypadinput('moveback'))
-            self.pb_A.clicked.connect(lambda: keypadinput('A'))
-            self.pb_B.clicked.connect(lambda: keypadinput('B'))
-            self.pb_C.clicked.connect(lambda: keypadinput('C'))
-            self.pb_D.clicked.connect(lambda: keypadinput('D'))
-            self.pb_E.clicked.connect(lambda: keypadinput('E'))
-            self.pb_F.clicked.connect(lambda: keypadinput('F'))
-            self.pb_G.clicked.connect(lambda: keypadinput('G'))
-            self.pb_H.clicked.connect(lambda: keypadinput('H'))
-            self.pb_I.clicked.connect(lambda: keypadinput('I'))
-            self.pb_J.clicked.connect(lambda: keypadinput('J'))
-            self.pb_K.clicked.connect(lambda: keypadinput('K'))
-            self.pb_L.clicked.connect(lambda: keypadinput('L'))
-            self.pb_M.clicked.connect(lambda: keypadinput('M'))
-            self.pb_N.clicked.connect(lambda: keypadinput('N'))
-            self.pb_O.clicked.connect(lambda: keypadinput('O'))
-            self.pb_P.clicked.connect(lambda: keypadinput('P'))
-            self.pb_Q.clicked.connect(lambda: keypadinput('Q'))
-            self.pb_R.clicked.connect(lambda: keypadinput('R'))
-            self.pb_S.clicked.connect(lambda: keypadinput('S'))
-            self.pb_T.clicked.connect(lambda: keypadinput('T'))
-            self.pb_U.clicked.connect(lambda: keypadinput('U'))
-            self.pb_V.clicked.connect(lambda: keypadinput('V'))
-            self.pb_W.clicked.connect(lambda: keypadinput('W'))
-            self.pb_X.clicked.connect(lambda: keypadinput('X'))
-            self.pb_Y.clicked.connect(lambda: keypadinput('Y'))
-            self.pb_Z.clicked.connect(lambda: keypadinput('Z'))
-            self.pb_TLeft.clicked.connect(ResetAndGoBack)
-            self.pb_TRight.clicked.connect(self.LoginPage)
-            self.pb_numEnter.clicked.connect(getTrackingNumber)
-            #setting up page
-            self.stackedWidget.setCurrentIndex(2)
-            self.pb_TLeft.setEnabled(True)
-            self.ScreenTitle.setText("Key in Tracking Number")
-            self.TrackinglineEdit.setFocus()
-            self.TrackinglineEdit.clear()
-            self.keybuffer = ""
-            self.index = 0
-        setup() #setup call
+
 
 
     def LoginPage(self): #fourth widget
         #setup
-        def setup():
+        def setup2():
             self.stackedWidget.setCurrentIndex(3)
             self.pb_TLeft.setEnabled(True)
             self.ScreenTitle.setText("Login")
             self.pb_TLeft.clicked.connect(self.WelcomePage)
-        setup()
+        setup2()
 
 
 

@@ -278,10 +278,12 @@ class Ui_MainWindow(object):
         self.pb_movecursorbackward.setObjectName("pb_movecursorbackward")
         self.horizontalLayout_3.addWidget(self.pb_movecursorbackward)
         self.TrackinglineEdit = QtWidgets.QLineEdit(self.KeyInTrackNum)
-        self.TrackinglineEdit.setMouseTracking(True)
+        self.TrackinglineEdit.setEnabled(True)
+        self.TrackinglineEdit.setMouseTracking(False)
         self.TrackinglineEdit.setFocusPolicy(QtCore.Qt.NoFocus)
         self.TrackinglineEdit.setText("")
-        self.TrackinglineEdit.setDragEnabled(True)
+        self.TrackinglineEdit.setDragEnabled(False)
+        self.TrackinglineEdit.setCursorMoveStyle(QtCore.Qt.LogicalMoveStyle)
         self.TrackinglineEdit.setObjectName("TrackinglineEdit")
         self.horizontalLayout_3.addWidget(self.TrackinglineEdit)
         self.pb_movecursorforward = QtWidgets.QPushButton(self.KeyInTrackNum)
@@ -525,7 +527,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):

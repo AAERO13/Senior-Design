@@ -265,7 +265,7 @@ QAbstractSpinBox:read-only, QAbstractSpinBox:disabled {
       <item row="3" column="0" alignment="Qt::AlignHCenter">
        <widget class="QStackedWidget" name="stackedWidget">
         <property name="currentIndex">
-         <number>3</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="FirstPage">
          <property name="styleSheet">
@@ -456,8 +456,11 @@ QLineEdit:read-only,QLineEdit:hover:read-only {
               </item>
               <item>
                <widget class="QLineEdit" name="TrackinglineEdit">
-                <property name="mouseTracking">
+                <property name="enabled">
                  <bool>true</bool>
+                </property>
+                <property name="mouseTracking">
+                 <bool>false</bool>
                 </property>
                 <property name="focusPolicy">
                  <enum>Qt::NoFocus</enum>
@@ -466,10 +469,13 @@ QLineEdit:read-only,QLineEdit:hover:read-only {
                  <string/>
                 </property>
                 <property name="dragEnabled">
-                 <bool>true</bool>
+                 <bool>false</bool>
                 </property>
                 <property name="placeholderText">
                  <string>Enter Tracking Number Here</string>
+                </property>
+                <property name="cursorMoveStyle">
+                 <enum>Qt::LogicalMoveStyle</enum>
                 </property>
                </widget>
               </item>

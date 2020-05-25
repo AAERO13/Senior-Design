@@ -1,0 +1,96 @@
+.btn {
+    border: black;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Green */
+.Turn_on_Green {
+    background-color: #4CAF50;
+    color: white;
+	}
+
+.Turn_on_Green:hover {
+    color: green;
+	background-color: black
+}
+
+/* Blue */
+.Turn_on_Blue {
+    background: #2196F3;
+    color: white;
+}
+
+.Turn_on_Blue:hover {
+	color: dodgerblue;
+	background-color: black
+}
+
+/* Magenta */
+.Turn_on_Purple {
+	background: #ff00e4;
+    color: white;
+}
+
+.Turn_on_Purple:hover {
+    color: #ff00e4;
+	background-color: black
+}
+
+/* Orange */
+.Turn_on_Orange {
+	background: #FFB319;
+    color: white;
+}
+
+.Turn_on_Orange:hover {
+    color: #FFB319;
+	background-color: black
+}
+
+/* White */
+.Turn_on_White {
+	background: white;
+    color: black;
+}
+
+.Turn_on_White:hover {
+    color: white;
+	background-color: black
+}
+
+/* Teal */
+.Turn_on_Teal {
+	background: Aqua;
+    color: black;
+}
+
+.Turn_on_Teal:hover {
+    color: white;
+	background-color: black
+}
+
+/* Red */
+.Turn_on_Red {
+    background: #f44336;
+    color: white;
+}
+
+.Turn_on_Red:hover {
+    color: red;
+	background-color: black
+}
+
+/* Gray */
+.Turn_off_All {
+    background: #e7e7e7;
+}
+
+.Turn_off_All:hover {
+	color: white;
+	background-color: black
+    
+}
